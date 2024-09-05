@@ -1,4 +1,4 @@
-FROM golang:1.16.9-stretch AS builder
+FROM golang:1.18.3-stretch AS builder
 
 # 环境变量
 ENV GO111MODULE=on \
@@ -14,7 +14,9 @@ WORKDIR /build
 COPY . .
 
 # 下载依赖
-RUN go mod download
+RUN go mod download \
+    && go get shershon1991/fund-analye-system/service/crawl/fund \
+    && go get github.com/gin-gonic/gin/binding@v1.7.2
 
 # 编译成二进制文件,二进制文件名：app
 RUN go build -o app .

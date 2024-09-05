@@ -10,6 +10,7 @@ type FundTopCron struct{}
 
 func (c FundTopCron) Run() {
 	fmt.Println("基金排行榜-定时任务准备运行!")
+
 	f := &fund.TopCrawlService{}
 	// 爬取网页
 	f.CrawlHtml()
@@ -24,5 +25,6 @@ func (c FundTopCron) Run() {
 		}
 		global.GvaLogger.Sugar().Infof("本次任务保存数据：%d条", result.RowsAffected)
 	}
+
 	fmt.Println("基金排行榜-定时任务运行结束!")
 }
