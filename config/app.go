@@ -3,10 +3,10 @@ package config
 
 // 应用信息
 type app struct {
-	Desc       string `yaml:"desc"`
-	Addr       string `yaml:"addr"`
 	ConfigFile string `yaml:"configFile"`
+	Desc       string `yaml:"desc"`
 	Version    string `yaml:"version"`
+	Addr       string `yaml:"addr"`
 	Env        string `yaml:"env"`
 }
 

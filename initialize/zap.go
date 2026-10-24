@@ -93,9 +93,9 @@ func getEncodeTime(t time.Time, enc zapcore.PrimitiveArrayEncoder) {
 func getLumberjackWriteSyncer() zapcore.WriteSyncer {
 	lumberjackConfig := global.GvaConfig.Log.LumberJack
 	lumberjackLogger := &lumberjack.Logger{
-		Filename:   getLogFile(),                //日志文件
-		MaxSize:    lumberjackConfig.MaxSize,    //单文件最大容量(单位MB)
-		MaxBackups: lumberjackConfig.MaxBackups, //保留旧文件的最大数量
+		Filename:   getLogFile(),                // 日志文件
+		MaxSize:    lumberjackConfig.MaxSize,    // 单文件最大容量(单位MB)
+		MaxBackups: lumberjackConfig.MaxBackups, // 保留旧文件的最大数量
 		MaxAge:     lumberjackConfig.MaxAge,     // 旧文件最多保存几天
 		Compress:   lumberjackConfig.Compress,   // 是否压缩/归档旧文件
 	}

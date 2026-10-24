@@ -26,7 +26,7 @@ func initElastic() {
 			elastic.SetInfoLog(log.New(os.Stderr, elasticConfig.LogPre+"INFO ", log.LstdFlags)),
 		)
 		if err != nil {
-			panic("创建ES客户端错误:" + err.Error())
+			panic(any("创建ES客户端错误:" + err.Error()))
 		}
 		global.GvaElastic = client
 	}

@@ -42,7 +42,7 @@ func initGorm() {
 		},
 		// 执行任何SQL时都会创建一个 prepared statement 并将其缓存，以提高后续的效率
 		PrepareStmt: mysqlConfig.Gorm.PreparedStmt,
-		//在AutoMigrate 或 CreateTable 时，GORM 会自动创建外键约束，若要禁用该特性，可将其设置为 true
+		// 在AutoMigrate 或 CreateTable 时，GORM 会自动创建外键约束，若要禁用该特性，可将其设置为true
 		DisableForeignKeyConstraintWhenMigrating: mysqlConfig.Gorm.CloseForeignKey,
 	}
 	// 是否覆盖默认sql配置
